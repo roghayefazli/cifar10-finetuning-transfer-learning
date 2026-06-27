@@ -1,72 +1,114 @@
+# 🚀 Transfer Learning for Cross-Dataset Image Classification
 
+This repository presents an end-to-end **Transfer Learning pipeline** using TensorFlow and Keras. A convolutional neural network is first pretrained on the **CIFAR-10** dataset and then fine-tuned on multiple downstream image classification tasks to evaluate knowledge transfer across different visual domains.
 
-# CIFAR-10 Fine-Tuning with Transfer Learning
-
-This repository contains an end-to-end implementation of fine-tuning a deep learning model on the **CIFAR-10 dataset** using **transfer learning**.  
-The notebook demonstrates how to load CIFAR-10, preprocess data, build a model (such as a pretrained CNN), fine-tune it, evaluate its accuracy, and visualize results.
-
-## 📌 Features
-- ✔️ CIFAR-10 dataset loading and preprocessing  
-- ✔️ Transfer Learning using pretrained CNN architecture  
-- ✔️ Model fine-tuning with customizable hyperparameters  
-- ✔️ Training & validation accuracy/loss visualization  
-- ✔️ Evaluation on test images  
-- ✔️ Clean and modular notebook structure  
+The project demonstrates how a pretrained model can be reused for new datasets through transfer learning, reducing training time while maintaining competitive performance.
 
 ---
 
-## 📁 Repository Structure
-.
-├── CIFAR10_FineTuning.ipynb # Main training notebook
-└── README.md
+# 📌 Project Overview
 
-yaml
-Copy code
+The workflow consists of three stages:
+
+1. **Pre-training on CIFAR-10**
+
+   * Dataset loading and preprocessing
+   * CNN training
+   * Model evaluation
+   * Saving pretrained weights
+
+2. **Fine-tuning on Coin Classification**
+
+   * Loading pretrained CIFAR-10 weights
+   * Replacing the classifier head
+   * Fine-tuning on a 6-class coin dataset
+
+3. **Fine-tuning on EuroSAT**
+
+   * Loading pretrained CIFAR-10 weights
+   * Transfer learning for remote sensing image classification
+   * Evaluation on the EuroSAT benchmark
 
 ---
 
-## 🚀 How to Use
+# 🧠 Features
 
-### 1. Clone the repository
+* ✅ End-to-end Transfer Learning pipeline
+* ✅ CIFAR-10 model pretraining
+* ✅ Cross-dataset fine-tuning
+* ✅ Coin image classification
+* ✅ EuroSAT land-cover classification
+* ✅ Modular TensorFlow/Keras implementation
+* ✅ Training and validation visualization
+* ✅ Model saving and reuse
+* ✅ Easy-to-extend project structure
+
+---
+
+# 📊 Experimental Results
+
+| Stage        | Dataset             | Classes |                    Performance |
+| ------------ | ------------------- | ------: | -----------------------------: |
+| Pre-training | CIFAR-10            |      10 |       **79.36% Test Accuracy** |
+| Fine-tuning  | Coin Classification |       6 |       **78.65% Test Accuracy** |
+| Fine-tuning  | EuroSAT             |      10 | **76.74% Validation Accuracy** |
+
+---
+
+# 🛠 Technologies
+
+* Python
+* TensorFlow
+* Keras
+* NumPy
+* Matplotlib
+* Scikit-learn
+
+---
+
+# 🚀 Getting Started
+
+Clone the repository:
+
 ```bash
-git clone https://github.com/<your-username>/cifar10-finetuning-transfer-learning.git
-cd cifar10-finetuning-transfer-learning
-2. Install dependencies
-bash
-Copy code
+git clone https://github.com/roghayefazli/transfer-learning-image-classification.git
+cd transfer-learning-image-classification
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
-If you don’t have a requirements.txt, you can generate it from your environment:
+```
 
-bash
-Copy code
-pip freeze > requirements.txt
-📊 Results
-The notebook includes:
+Run the notebooks in the following order:
 
-Accuracy/Loss plots
-
-Model performance on test images
-
-Predictions vs actual labels
-
-You can extend the project by:
-
-Trying different pretrained models
-
-Running more epochs
-
-Adding data augmentation
-
-Exporting the model for deployment
-
-📜 License
-This project is under the MIT License. Feel free to use and modify.
-
-👤 Author
-Your Name
-Feel free to contribute or open issues!
-
-yaml
-Copy code
+1. CIFAR10_Pretraining.ipynb
+2. Coin_FineTuning.ipynb
+3. EuroSAT_FineTuning.ipynb
 
 ---
+
+# 🔬 Future Improvements
+
+* Evaluate EfficientNet, DenseNet, and MobileNet backbones
+* Compare CIFAR-10 and ImageNet pretrained weights
+* Add Grad-CAM visualization
+* Perform hyperparameter optimization
+* Export models for deployment (ONNX / TensorFlow Lite)
+
+---
+
+# 📄 License
+
+This project is released under the MIT License.
+
+---
+
+# 👩‍💻 Author
+
+**Roghaye Fazli**
+
+M.Sc. Student in Artificial Intelligence
+
+GitHub: https://github.com/roghayefazli
